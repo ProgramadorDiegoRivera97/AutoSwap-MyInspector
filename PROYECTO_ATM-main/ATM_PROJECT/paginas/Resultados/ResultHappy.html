@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Successful vehicle inspection result">
+    <title>Inspection Passed | ATM</title>
+    <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/estilos.css" rel="stylesheet">
+
+    <style>
+        .result-page {
+            min-height: 100vh;
+            min-width: 0;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            place-items: center;
+            padding: 1.25rem;
+            box-sizing: border-box;
+        }
+
+        .result-card {
+            width: 100%;
+            max-width: 680px;
+            box-sizing: border-box;
+            justify-self: center;
+            padding: clamp(1.5rem, 5vw, 3rem);
+            background: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 1.5rem;
+            box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.2);
+        }
+
+        .result-illustration {
+            display: block;
+            width: min(100%, 280px);
+            height: auto;
+            margin: 0 auto 1.5rem;
+        }
+
+        .result-title {
+            color: #146c43;
+        }
+
+        .result-message {
+            max-width: 34rem;
+            margin-inline: auto;
+            color: #495057;
+        }
+    </style>
+</head>
+
+<body class="result-page" background="../../imagenesrtm/rtm1.0.png">
+    <main class="result-card text-center" aria-labelledby="result-title">
+        <svg class="result-illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 220" role="img"
+            aria-labelledby="success-image-title">
+            <title id="success-image-title">A vehicle with a successful inspection checkmark</title>
+            <circle cx="140" cy="108" r="91" fill="#e8f5ee" />
+            <circle cx="140" cy="108" r="73" fill="#d1e7dd" />
+            <path d="M55 142h170v18a12 12 0 0 1-12 12H67a12 12 0 0 1-12-12z" fill="#146c43" />
+            <path d="m76 118 13-30a14 14 0 0 1 13-8h61a14 14 0 0 1 12 7l19 31" fill="#fff"
+                stroke="#146c43" stroke-width="7" stroke-linejoin="round" />
+            <path d="M65 117h143a17 17 0 0 1 17 17v8H55v-11a14 14 0 0 1 10-14z" fill="#198754" />
+            <path d="M100 88h29v27H88l10-23a2 2 0 0 1 2-4zm37 0h24a7 7 0 0 1 6 4l15 23h-45z" fill="#b7e4c7" />
+            <circle cx="87" cy="159" r="14" fill="#212529" />
+            <circle cx="87" cy="159" r="6" fill="#dee2e6" />
+            <circle cx="190" cy="159" r="14" fill="#212529" />
+            <circle cx="190" cy="159" r="6" fill="#dee2e6" />
+            <circle cx="202" cy="58" r="31" fill="#198754" stroke="#fff" stroke-width="6" />
+            <path d="m188 58 9 9 19-20" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path d="m66 65 4 9 9 4-9 4-4 9-4-9-9-4 9-4zm151 57 3 7 7 3-7 3-3 7-3-7-7-3 7-3z"
+                fill="#ffc107" />
+        </svg>
+
+        <p class="text-uppercase fw-semibold text-success mb-2">Inspection complete</p>
+        <h1 class="result-title display-5 fw-bold mb-3" id="result-title">Congratulations!</h1>
+        <p class="result-message fs-5 mb-4">
+            Your vehicle passed the inspection. All required checks are complete, and you’re ready to hit the road.
+        </p>
+        <a href="../variedad.html" class="btn btn-success btn-lg px-4">Back to vehicle selection</a>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>List groups · Bootstrap v5.1</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/list-groups/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/estilos.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .tipo-prueba-page {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        .tipo-prueba-panel {
+            width: min(100%, 700px);
+        }
+
+        .inspection-option {
+            display: flex;
+            align-items: center;
+        }
+
+        .inspection-icon {
+            width: 3rem;
+            height: 3rem;
+            flex: 0 0 3rem;
+            margin: 0 0.75rem;
+            padding: 0.5rem;
+            border-radius: 0.75rem;
+            background: #e8f1ff;
+        }
+
+        .inspection-option label {
+            flex-grow: 1;
+        }
+    </style>
+
+</head>
+
+<body class="tipo-prueba-page" background="../imagenesrtm/rtm1.0.png">
+
+
+    <div class="tipo-prueba-panel text-dark py-4 text-center fondo-trasparencia redondear-bordes">
+        <h1 class="display-5 fw-bold text-white justify-content-center mb-4">Select an inspection type </h1>
+
+        <div class="d-flex justify-content-center">
+            <ul class="list-group w-75">
+                <li class="list-group-item text-start fondo-azul letra-lista inspection-option">
+                    <input class="form-check-input flex-shrink-0 inspection-check" type="radio" name="tipoInspeccion" value="mecanica" id="checkMecanica">
+                    <svg class="inspection-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Car mechanical inspection">
+                        <path d="M30 8a11 11 0 0 0-12 14L7 33a5 5 0 0 0 7 7l11-11A11 11 0 0 0 39 17l-7 7-8-2-2-8z" fill="none" stroke="#174ea6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="12.5" cy="35.5" r="1.5" fill="#174ea6" />
+                    </svg>
+                    <label for="checkMecanica">Mechanical Inspection</label>
+                </li>
+                <li class="list-group-item text-start fondo-azul letra-lista inspection-option">
+                    <input class="form-check-input flex-shrink-0 inspection-check" type="radio" name="tipoInspeccion" value="luces" id="checkLuces">
+                    <svg class="inspection-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Car lighting inspection">
+                        <path d="M8 29h5l5-8h15l7 8h3a3 3 0 0 1 3 3v6H5v-6a3 3 0 0 1 3-3z" fill="none" stroke="#174ea6" stroke-width="3" stroke-linejoin="round" />
+                        <path d="M8 29h8M40 29h4M13 38a4 4 0 1 0 8 0m8 0a4 4 0 1 0 8 0M5 24h7m-5-5 6 3m28 2h-5m5-7-6 3" fill="none" stroke="#174ea6" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+                    <label for="checkLuces">Lights</label>
+                </li>
+                <li class="list-group-item text-start fondo-azul letra-lista inspection-option">
+                    <input class="form-check-input flex-shrink-0 inspection-check" type="radio" name="tipoInspeccion" value="gases" id="checkGases">
+                    <svg class="inspection-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Car exhaust emissions inspection">
+                        <path d="M7 30h18l5 5h6v5H8a4 4 0 0 1-4-4v-2a4 4 0 0 1 3-4z" fill="none" stroke="#174ea6" stroke-width="3" stroke-linejoin="round" />
+                        <path d="M36 38h7m-26-8 3-5m4 5 3-5m4 5 3-5" fill="none" stroke="#174ea6" stroke-width="3" stroke-linecap="round" />
+                        <circle cx="14" cy="38" r="2" fill="#174ea6" />
+                    </svg>
+                    <label for="checkGases">Emissions Inspection</label>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <a href="#" class="btn btn-primary mt-4 px-4 disabled" id="btnIniciar"
+                aria-disabled="true" tabindex="-1">Start</a>
+            <div class="d-flex gap-3 justify-content-center mt-3">
+                <a href="variedad.html" id="btnVolver" class="btn btn-secondary boton-olvido">
+                     Back
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const vehiculo = sessionStorage.getItem("atm:tipoVehiculo");
+        const flujos = {
+            motocicleta: {
+                carpeta: "TodoMotos",
+                mecanica: "MotoMecanica.html",
+                luces: "MotoLuces.html",
+                gases: "MotoGases.html",
+                clave: "atm:inspeccion:motos:mecanica"
+            },
+            sencillo: {
+                carpeta: "TodoSencillo",
+                mecanica: "SencilloMecanica.html",
+                luces: "SencilloLuces.html",
+                gases: "SencilloGases.html",
+                clave: "atm:inspeccion:sencillo:mecanica"
+            },
+            "llanta-doble": {
+                carpeta: "TodoLlantaDoble",
+                mecanica: "LlantaDmecanica.html",
+                luces: "LlantaDluces.html",
+                gases: "LlantaDGases.html",
+                clave: "atm:inspeccion:llanta-doble:mecanica"
+            }
+        };
+        const flujo = flujos[vehiculo];
+        const btnIniciar = document.getElementById("btnIniciar");
+        const btnVolver = document.getElementById("btnVolver");
+        const radios = document.querySelectorAll(".inspection-check");
+
+        if (!flujo) {
+            radios.forEach(radio => { radio.disabled = true; });
+        } else {
+            const mecanicaCompletada = sessionStorage.getItem(flujo.clave) === "completada";
+            document.getElementById("checkMecanica").disabled = mecanicaCompletada;
+            document.getElementById("checkLuces").disabled = !mecanicaCompletada;
+            document.getElementById("checkGases").disabled = !mecanicaCompletada;
+            btnVolver.href = new URL(flujo.carpeta + "/pre-checking.html", document.baseURI).href;
+
+            const destinos = {
+                mecanica: flujo.mecanica,
+                luces: flujo.luces,
+                gases: flujo.gases
+            };
+            radios.forEach(radio => {
+                radio.addEventListener("change", function () {
+                    if (!this.checked) return;
+                    btnIniciar.href = new URL(flujo.carpeta + "/" + destinos[this.value], document.baseURI).href;
+                    btnIniciar.classList.remove("disabled");
+                    btnIniciar.setAttribute("aria-disabled", "false");
+                    btnIniciar.removeAttribute("tabindex");
+                });
+            });
+        }
+
+        btnIniciar.addEventListener("click", function (event) {
+            if (btnIniciar.classList.contains("disabled")) event.preventDefault();
+        });
+    </script>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
